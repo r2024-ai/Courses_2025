@@ -188,3 +188,52 @@ Returns the response, grounded in the retrieved knowledge.
     
 In short, while you have the "ground truth" in your documents, you need the LLM to act as the bridge between that raw information and a meaningful, human-understandable answer.
 
+## Should I Use LLM Training Data if Information is Missing?
+
+* Option 1 - Allow LLM to Use Pre-trained Data  
+Pros - 
+
+1. Broader Knowledge Base
+2. Maintains user satisfaction
+3. Acts as a fallback when retrieval fails
+
+Cons - 
+
+1. Risk of hallucination
+2. Potential loss of trust
+
+* Option 2 - Do Not Use Pre-Trained Data
+Pros -
+
+1. Ensures transparency and control
+2. Encourages knowledge base improvement
+
+Cons -
+
+1. Can frustrate users with "no answer found".
+2. Misses opportunities for general knowledge responses.
+
+# Practical Recommendations
+
+**When to Opt for LLM check.**  
+For general-purpose applications where user satisfaction and broad coverage are priorities. • Example: A public
+chatbot for general queries.
+
+**When Not to Opt for LLM Check.**  
+For domain-specific applications requiring strict accuracy and reliability. • Example: A medical assistant system
+retrieving verified healthcare guidelines.
+Hybrid Approach To balance these options,
+
+**Consider a hybrid solution** 
+1. Primary Source: Attempt retrieval from the document database. 2. Fallback: o Use the LLM for queries flagged as
+low-risk (general knowledge). o Clearly tag responses as "based on pre-trained knowledge" when using the LLM.
+
+## Why Combine LLM with Retrieval?
+
+* Without RAG - LLM might generate hallucinated or incorrect information
+* With RAG - The LLM is constrained to use only the retrieved, accurate documents, improving reliability
+
+1. Dynamic Information Retrieval
+Unlike static hardcoded document access, RAG dynamically fetches updated or domain-specific data in real-time.
+
+Example - Corporate policies or FAQs that change frequently
