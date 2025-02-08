@@ -82,3 +82,74 @@ Example - Given "The capital of Italy is" the model predicts "Rome".
 company policies. FAQs).
 2. **Data Privacy**: LLMs cannot inherently verify or access private/secure documents.
 3. **Hallucination**: LLMs can generate fabricated or inaccurate information.
+
+## What is Retrieval Augumented Generation(RAG)? Understand its Architecture  
+
+![alt text](image.png)
+
+
+Absolutely! Let's break down Retrieval Augmented Generation (RAG) and its architecture, referencing the image you provided.
+
+**What is Retrieval Augmented Generation (RAG)?**
+
+RAG is a technique that enhances the capabilities of Large Language Models (LLMs) by grounding them with external, factual data sources.  Think of it as giving the LLM access to an "open book" of knowledge to improve its responses – making them more accurate, relevant, and informative.
+
+**Why is RAG Important?**
+
+LLMs are trained on massive datasets but their knowledge is limited to what they've seen during training. They can also generate incorrect or hallucinated information. RAG addresses these limitations by:
+
+* **Improving Accuracy:** By retrieving relevant information from a reliable source, RAG reduces the likelihood of LLMs fabricating facts.
+* **Keeping Information Up-to-Date:** LLMs have a fixed knowledge cutoff. RAG allows them to access current information from external databases, ensuring their responses are timely.
+* **Increasing Transparency:** RAG provides context by citing sources, making it clear where the information is coming from and increasing trust in the LLM's output.
+* **Enabling Domain Specificity:** RAG can be tailored to specific domains by using specialized knowledge bases, making LLMs more effective in niche applications.
+
+**Architecture Breakdown (Based on Your Image):**
+
+Let's dissect the architecture presented in your image:
+
+1. **Proprietary Data:** This represents your organization's internal or private data sources. It could be documents, wikis, databases, etc. This is the "knowledge base" you want the LLM to access.
+
+2. **Embedding Model:** This model transforms both the "Proprietary Data" and the "User Question" into vector representations (embeddings). Embeddings are numerical representations of text that capture semantic meaning.  Similar content will have vectors close to each other in vector space.
+
+3. **Vector Database:** This specialized database stores the embeddings of your proprietary data, enabling efficient similarity searches.
+
+4. **User Question:** The question or prompt posed by the user.
+
+5. **Search:** The user question's embedding is used to query the vector database and retrieve the "Top K relevant documents" – the documents with the most similar embeddings to the question.
+
+6. **Top K Relevant Documents:** These are the most pertinent pieces of information from your proprietary data that are likely to help answer the user's question.
+
+7. **Prompt: Original Question + Context:** This is a crucial step. The original user question is combined with the retrieved relevant documents to create an enriched prompt. This prompt now contains both the user's query and the necessary context from the knowledge base.
+
+8. **LLM (Large Language Model):**  The enriched prompt is fed into the LLM.
+
+9. **Answer:** The LLM generates a response based on the combined information in the prompt. Since it has access to the relevant context, the answer is more likely to be accurate, informative, and grounded in the provided data.
+
+**In essence, RAG follows these steps:**
+
+1. **Retrieval:** Retrieve relevant information from an external knowledge base based on the user's query.
+2. **Augmentation:** Combine the retrieved information with the original query to create a richer prompt.
+3. **Generation:** Feed the augmented prompt to the LLM to generate a response.
+
+**Key Components:**
+
+* **Embedding Models:**  Essential for capturing semantic meaning and enabling effective search.
+* **Vector Databases:**  Designed for efficient similarity search on vector embeddings.
+* **LLMs:** The core component that generates the final answer.
+
+**Benefits of RAG:**
+
+* **Enhanced Accuracy and Factual Grounding**
+* **Up-to-Date Information**
+* **Increased Transparency and Trust**
+* **Domain Customization**
+* **Reduced Hallucinations**
+
+**Use Cases for RAG:**
+
+* **Chatbots with Access to Company Knowledge Bases**
+* **Question Answering Systems over Proprietary Data**
+* **Generating Reports with Supporting Evidence**
+* **Personalized Search based on User History**
+
+Let me know if you'd like a deeper dive into any specific aspect of RAG or its architecture!
