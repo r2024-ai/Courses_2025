@@ -153,3 +153,38 @@ Let's dissect the architecture presented in your image:
 * **Personalized Search based on User History**
 
 Let me know if you'd like a deeper dive into any specific aspect of RAG or its architecture!
+
+## End to End flow in RAG Architecture and its key Advantages
+
+1. User Input - 
+The user submits a query (e.g., "How do solar panels work?").
+
+2. Query Embedding
+Coverts the query into a vector representation. Allows comparison with document vectors in a vector database (e.g. FAISS,Pinecone).
+
+3. Documents Retrieval  
+Searches the vector database for the closest matching documents. Example: Retrieves snippets like "Solar
+panels convert sunlight into electricity using photovoltaic cells."
+
+4. Input Combination
+Combines the user query and retrieved documents into a single prompt for the LLM
+
+5. Response Generation
+The LLM processes the prompt and generates a natural language response. Example: "Solar panels work by
+converting sunlight into electricity using photovoltaic cells."
+
+6. Final Response
+Returns the response, grounded in the retrieved knowledge.
+
+## Misconceptions - Why RAG LLM's - cant we solve problem with traditional methods?
+
+* Challenges
+    1. Understanding Natural Language - Human Queries are complex and nuanced.
+    2. Locating Precise Information - Long documents make pinpointing answers difficult
+    3. Synthesizing Information - Combining and summarizing content from multiple sources is challenging.
+
+* Conclusion
+    1. LLMs act as a researcher, turning raw document data into clear, human-readable answers
+    
+In short, while you have the "ground truth" in your documents, you need the LLM to act as the bridge between that raw information and a meaningful, human-understandable answer.
+
