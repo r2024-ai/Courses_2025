@@ -76,9 +76,12 @@ Conversational LLM scenarios refer to how Large Language Models (LLMs) engage in
 - **Domain Adaptability**: Eliminates the need for full retraining by dynamically integrating with structured and unstructured data.  
 - **Context Awareness**: Maintains conversation history while fetching relevant information for improved user interactions.  
 
-Would you like a technical breakdown of how to implement RAG in a conversational AI system?  
+
 
 ### Ragas Library
+
+Ragas is a library that provides to supercharge the evaluation  
+of LLM application. It is designed to help you evaluate your LLM applications with ease and confidence.
 
 [Ragas](https://github.com/explodinggradients/ragas) is an **evaluation framework for Retrieval-Augmented Generation (RAG)** systems. It helps **assess retrieval quality, grounding, answer correctness, and hallucinations** in AI-generated responses.
 
@@ -178,3 +181,11 @@ print(hallucination_score)  # Lower is better
 ## **🎯 Final Thoughts**
 **Ragas.io** makes RAG evaluation **easy, automated, and scalable**! 🚀  
 Would you like **a demo script** to evaluate a custom **LLM + Retriever setup**? 😊
+
+
+## Understand the Metric benchmarks for Document Retrieval system in LLM
+
+Both **Context Recall** and **Context Precision** are metrics used to evaluate the   
+effectiveness of a document retrieval system. They a assess different aspects of how well the system retrieves relevant documents in response to a query.
+
+![alt text](image-3.png)
