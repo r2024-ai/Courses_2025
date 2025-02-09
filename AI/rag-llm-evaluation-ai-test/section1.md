@@ -1,5 +1,7 @@
 # RAG-LLM Evaluation & Test Automation with RAGAS Pytest Framework
 
+## Introduction to AI Concepts -  LLM's & RAG LLM's
+
 **What will you learn from the course?**
 
 * High-level overview of Large Language Models (LLMs).
@@ -22,39 +24,39 @@ RAGAS is a Library
 Now every company is coming up with their own custom LLMs  
 They take a base model like and they build a wrapper around it.  
 
-## Course Outcome
+### Course Outcome
 
 * By the end of the course, you will be able to create a **RAGAS Pytest Evaluation Framework** to assert the metrics of RAG-based (custom) LLMs
 
-## Key Metrics
+### Key Metrics
 
 This course covers **7 key evaluation metrics** commonly used to test LLMs. The same approach can be applied to other metric evaluations
 
-## Hands-on Experience
+### Hands-on Experience
 
 The course provides a **practice RAG-LLM** for hands-on  
 learning. However, during the scripting phase, **a basic OpenAI subscription** is required to access APIs (**a minimal $10 credit will suffice)**
 
-## Course Prerequisites
+### Course Prerequisites
 
 Basic knowledge of **Python and Pytest** is required. The  
 course includes **two dedicated sections** at the end,  
 covering the essential Python & Pytest concepts needed. A  
 basic understanding of **API testing** is also recommended.
 
-## What is Artificial Intelligence (AI)?
+### What is Artificial Intelligence (AI)?
 
 Definition: AI is the branch of computer science that creates systems capable of performing tasks requiring human intelligence, such as understanding language, recognizing patterns, decision-making, and
 problem-solving.
 
-## What are Large Language Models(LLMs)?
+### What are Large Language Models(LLMs)?
 
-**Definition**
+**Definition**  
 
 LLMs are advanced AI models trained on vast amounts of text
 data to understand, generate, and interact with natural language using deep learning techniques, particularly transformers.
 
-## How LLMs Work
+### How LLMs Work
 
 * Pre-Training - Trained on diverse datasets (books, articles, code, etc.) to predict the next word in a sentence.
 
@@ -64,7 +66,7 @@ Example - Given "The capital of Italy is" the model predicts "Rome".
 
 * Inference - Generates responses to user queries using pre-trained knowledge.
 
-## Top 5 LLMs - One liner summaries
+### Top 5 LLMs - One liner summaries
 
 1. GPT-4(OpenAI) - Versatile model excelling in multitasking, reasoning, and conversational AI
 
@@ -76,14 +78,14 @@ Example - Given "The capital of Italy is" the model predicts "Rome".
 
 5. Perplexity AI - Combines retrieval-augumented generation with conversational AI for fact-based responses
 
-## LLMs Challenges
+### LLMs Challenges
 
 1. **Outdated Knowledge**: Pre-trained LLMs may lack recent or domain-specific information (e.g..
 company policies. FAQs).
 2. **Data Privacy**: LLMs cannot inherently verify or access private/secure documents.
 3. **Hallucination**: LLMs can generate fabricated or inaccurate information.
 
-## What is Retrieval Augumented Generation(RAG)? Understand its Architecture  
+### 5. What is Retrieval Augumented Generation(RAG)? Understand its Architecture  
 
 ![alt text](image.png)
 
@@ -154,7 +156,7 @@ Let's dissect the architecture presented in your image:
 
 Let me know if you'd like a deeper dive into any specific aspect of RAG or its architecture!
 
-## End to End flow in RAG Architecture and its key Advantages
+### 6. End to End flow in RAG Architecture and its key Advantages
 
 1. User Input - 
 The user submits a query (e.g., "How do solar panels work?").
@@ -176,7 +178,9 @@ converting sunlight into electricity using photovoltaic cells."
 6. Final Response
 Returns the response, grounded in the retrieved knowledge.
 
-## Misconceptions - Why RAG LLM's - cant we solve problem with traditional methods?
+## Section 2 - Understanding RAG(Retrieval Augumented Generation) - LLM Architecture with Usecase
+
+### 7. Misconceptions - Why RAG LLM's - cant we solve problem with traditional methods?
 
 * Challenges
     1. Understanding Natural Language - Human Queries are complex and nuanced.
@@ -188,7 +192,7 @@ Returns the response, grounded in the retrieved knowledge.
     
 In short, while you have the "ground truth" in your documents, you need the LLM to act as the bridge between that raw information and a meaningful, human-understandable answer.
 
-## Should I Use LLM Training Data if Information is Missing?
+### 8. Should I Use LLM Training Data if Information is Missing?
 
 * Option 1 - Allow LLM to Use Pre-trained Data  
 Pros - 
@@ -213,7 +217,7 @@ Cons -
 1. Can frustrate users with "no answer found".
 2. Misses opportunities for general knowledge responses.
 
-# Practical Recommendations
+### Practical Recommendations
 
 **When to Opt for LLM check.**  
 For general-purpose applications where user satisfaction and broad coverage are priorities. • Example: A public
@@ -224,11 +228,11 @@ For domain-specific applications requiring strict accuracy and reliability. • 
 retrieving verified healthcare guidelines.
 Hybrid Approach To balance these options,
 
-**Consider a hybrid solution** 
-1. Primary Source: Attempt retrieval from the document database. 2. Fallback: o Use the LLM for queries flagged as
+**Consider a hybrid solution**  
+> Primary Source: Attempt retrieval from   the document database. 2. Fallback: o Use   the LLM for queries flagged as  
 low-risk (general knowledge). o Clearly tag responses as "based on pre-trained knowledge" when using the LLM.
 
-## Why Combine LLM with Retrieval?
+### Why Combine LLM with Retrieval?
 
 * Without RAG - LLM might generate hallucinated or incorrect information
 * With RAG - The LLM is constrained to use only the retrieved, accurate documents, improving reliability
@@ -237,3 +241,95 @@ low-risk (general knowledge). o Clearly tag responses as "based on pre-trained k
 Unlike static hardcoded document access, RAG dynamically fetches updated or domain-specific data in real-time.
 
 Example - Corporate policies or FAQs that change frequently
+
+
+### Optional - Overview how code looks in building RAG LLM's applications
+
+Building a **Retrieval-Augmented Generation (RAG) LLM Application** typically involves the following components:
+
+1. **Ingestion Pipeline** (for indexing knowledge)
+2. **Vector Database** (e.g., FAISS, Pinecone, Weaviate, Chroma)
+3. **Retrieval Mechanism** (searching relevant documents)
+4. **LLM Integration** (using models like OpenAI GPT, Mistral, Llama)
+5. **Query Processing & Response Generation**  
+6. **Optional: Feedback Mechanism for Continuous Learning**
+
+---
+
+### 📌 **Code Overview of RAG LLM Application**
+Here’s a Python-based example using **LangChain**, **FAISS**, and **OpenAI**:
+
+#### **1️⃣ Install Dependencies**
+```bash
+pip install langchain openai faiss-cpu sentence-transformers chromadb
+```
+
+---
+
+#### **2️⃣ Load & Index Documents** (Vector Database)
+```python
+from langchain.document_loaders import TextLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import FAISS
+
+# Load documents
+loader = TextLoader("docs/sample.txt")  # Load your text data
+documents = loader.load()
+
+# Split text into smaller chunks
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+docs = text_splitter.split_documents(documents)
+
+# Convert text into embeddings & store in FAISS
+embeddings = OpenAIEmbeddings()
+vector_store = FAISS.from_documents(docs, embeddings)
+
+# Save the index
+vector_store.save_local("faiss_index")
+```
+
+---
+
+#### **3️⃣ Retrieve Relevant Information**
+```python
+# Load the stored FAISS index
+vector_store = FAISS.load_local("faiss_index", embeddings)
+
+# Perform search
+query = "What is Retrieval-Augmented Generation?"
+retrieved_docs = vector_store.similarity_search(query, k=3)
+
+for i, doc in enumerate(retrieved_docs):
+    print(f"Document {i+1}:\n", doc.page_content)
+```
+
+---
+
+#### **4️⃣ Generate Response Using LLM**
+```python
+from langchain.llms import OpenAI
+from langchain.chains import RetrievalQA
+
+# Load LLM
+llm = OpenAI(model_name="gpt-4")
+
+# Combine retrieval with LLM (RAG)
+rag_chain = RetrievalQA(llm=llm, retriever=vector_store.as_retriever())
+
+query = "Explain RAG in simple terms."
+response = rag_chain.run(query)
+
+print("\nGenerated Response:\n", response)
+```
+
+---
+
+### 🔥 **How It Works**
+- **Step 1:** Load & split text documents.
+- **Step 2:** Convert text into embeddings using OpenAI embeddings.
+- **Step 3:** Store embeddings in FAISS (a vector DB).
+- **Step 4:** When a user asks a question, fetch relevant docs via similarity search.
+- **Step 5:** Provide context to GPT-4 to generate a final response.
+
+Would you like me to enhance this with **memory, caching, or fine-tuning options**? 🚀
