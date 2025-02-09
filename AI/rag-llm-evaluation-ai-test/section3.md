@@ -71,8 +71,110 @@ Conversational LLM scenarios refer to how Large Language Models (LLMs) engage in
    - **RAG Role**: Pulls data from financial reports, SEC filings, and real-time news sources to ensure informed responses.  
 
 ### **How RAG Enhances Conversational LLMs**  
+
 - **Accuracy & Freshness**: Retrieves real-time or updated information from external sources, reducing hallucinations.  
 - **Domain Adaptability**: Eliminates the need for full retraining by dynamically integrating with structured and unstructured data.  
 - **Context Awareness**: Maintains conversation history while fetching relevant information for improved user interactions.  
 
-Would you like a technical breakdown of how to implement RAG in a conversational AI system?
+Would you like a technical breakdown of how to implement RAG in a conversational AI system?  
+
+### Ragas Library
+
+[Ragas](https://github.com/explodinggradients/ragas) is an **evaluation framework for Retrieval-Augmented Generation (RAG)** systems. It helps **assess retrieval quality, grounding, answer correctness, and hallucinations** in AI-generated responses.
+
+---
+
+## **🔍 Why Use Ragas?**
+✅ Evaluates **retrieval relevance** and **faithfulness** of answers  
+✅ Detects **hallucinations** (misleading or incorrect responses)  
+✅ Computes **semantic similarity** of generated responses  
+✅ Integrates with **LLMs like GPT-4 and embeddings like OpenAI, Cohere**  
+✅ Supports **dataset-based testing** for continuous monitoring  
+
+---
+
+## **📌 Key Features of Ragas**
+1. **Retrieval Quality Metrics** (Precision, Recall, MRR, NDCG)  
+2. **Grounding Score** (Measures factual consistency)  
+3. **Answer Correctness** (Ensures the LLM-generated answer aligns with retrieved context)  
+4. **Hallucination Detection** (Identifies whether the response contains non-grounded claims)  
+5. **End-to-End Evaluation** (Combines retrieval and generation evaluation)  
+
+---
+
+## **🛠️ How to Install & Use Ragas**
+### **1️⃣ Install Ragas**
+```sh
+pip install ragas
+```
+or (if using `pip`)
+```sh
+pip install git+https://github.com/explodinggradients/ragas.git
+```
+
+---
+
+### **2️⃣ Load & Prepare Data**
+```python
+from datasets import load_dataset
+
+# Load a sample RAG dataset
+dataset = load_dataset("explodinggradients/ragas_squad", split="test")
+print(dataset[0])  # View a sample data point
+```
+📌 **Dataset Structure:**  
+- `query`: The user's input  
+- `contexts`: The retrieved documents  
+- `answer`: The expected response  
+
+---
+
+### **3️⃣ Evaluate RAG Performance**
+```python
+from ragas import evaluate
+from ragas.metrics import (
+    context_precision, 
+    context_recall, 
+    faithfulness, 
+    answer_correctness
+)
+
+# Compute retrieval and generation metrics
+results = evaluate(
+    dataset, 
+    metrics=[context_precision, context_recall, faithfulness, answer_correctness]
+)
+
+print(results)  # Displays evaluation scores
+```
+📌 **Metrics Explanation:**  
+- `context_precision`: Measures how many retrieved docs are relevant  
+- `context_recall`: Checks if all relevant docs were retrieved  
+- `faithfulness`: Ensures answer is grounded in retrieved documents  
+- `answer_correctness`: Evaluates factual accuracy of AI response  
+
+---
+
+### **4️⃣ Detect Hallucinations**
+```python
+from ragas.metrics import hallucination
+
+hallucination_score = evaluate(dataset, metrics=[hallucination])
+print(hallucination_score)  # Lower is better
+```
+✔ **Low scores = fewer hallucinations**  
+✔ **Helps fine-tune retrieval or improve LLM response generation**  
+
+---
+
+## **🚀 When to Use Ragas?**
+✅ **Testing RAG Pipelines** in **LLM apps, chatbots, or QA systems**  
+✅ **Comparing retrieval strategies** (BM25, FAISS, Hybrid Search)  
+✅ **Tracking model drift** (Detecting AI-generated hallucinations over time)  
+✅ **Automating quality checks** for **production-ready RAG systems**  
+
+---
+
+## **🎯 Final Thoughts**
+**Ragas.io** makes RAG evaluation **easy, automated, and scalable**! 🚀  
+Would you like **a demo script** to evaluate a custom **LLM + Retriever setup**? 😊
