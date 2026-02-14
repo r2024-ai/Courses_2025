@@ -1,7 +1,7 @@
 # 5 principles of prompting
 
 
-## => Giving direction
+## => Principle 1 - Giving direction
 * **Describe the desired style in detail, or reference a relevant persona.**
 
 * Prompting ChatGPT
@@ -57,7 +57,7 @@ Please rate the product names based on their catchiness, uniqueness, and simplic
 
 > Giving direction is the first thing you should try. Because if you can steer the model towards something that's unique and original then you are going to get much better results specific to your use case
 
-## => Specify Format
+## => Principle 2 - Specify Format
 * Define what rules to follow, and the required structure of the response
 
 ![alt text](image-9.png)
@@ -76,7 +76,7 @@ Please rate the product names based on their catchiness, uniqueness, and simplic
 
 > It take some testing toget what you want in terms of your vision
 
-## => Provide Examples
+## => Principle 3 - Provide Examples
 * Insert a diverse set of test cases where the task was done correctly
 
 * zero shock or few shock method
@@ -103,7 +103,7 @@ Please rate the product names based on their catchiness, uniqueness, and simplic
 
 ![alt text](image-18.png)
 
-## => Evaluate Quality
+## => Principle 4 - Evaluate Quality
 
 * Identify errors and rate responses, testing what drives performance
 
@@ -135,7 +135,7 @@ CFG scale / prompt strength
 
 > Testing those parameters where the sweet spot is really a big key for image generation
 
-## => Divide Labor
+## => Principle 5 - Divide Labor
 * Split Tasks into multiple steps, chained together for complex goals
 
 > Basically the prompt that comes after.
@@ -158,3 +158,14 @@ CFG scale / prompt strength
 ![alt text](image-28.png)
 
 ## => Applying the Five Principles + Worksheet & Onej pagers
+
+Testing of Prompts - 
+
+![alt text](image-29.png)
+
+> Seed words - It's just a way saying the words which I like then it can go off. Basically I am leaving it open for creativity.
+
+> The more you give examples, the better it give results in general
+> Don't add too many examples, else it will use too many tokens
+> If you get different results everytime, that's the proof that AI doesn't actually know how to read them.
+> You don't have to be technical to do this process. It's just a case of retrying, retrying, testing what works and making changes. And then seeing what gives you reliable results that you actually want. And that's the important thing with this type of work. Because if you know the right way to ask, you can get it to do pretty much anything.
