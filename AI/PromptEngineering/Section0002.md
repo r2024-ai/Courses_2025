@@ -102,3 +102,59 @@ Please rate the product names based on their catchiness, uniqueness, and simplic
 > in image models you can give example image.
 
 ![alt text](image-18.png)
+
+## => Evaluate Quality
+
+* Identify errors and rate responses, testing what drives performance
+
+![alt text](image-19.png)
+
+![alt text](image-20.png)
+
+* Imapact on Results
+
+![alt text](image-21.png)
+
+* Image models
+
+In midjourny or stable diffusion - evaluation is built in the platform
+
+* Prompt Template - 
+
+![alt text](image-22.png)
+
+![alt text](image-23.png)
+
+> Select the image which you like and then use that image as base image later for the variation which you like
+
+* Impact on results - 
+
+![alt text](image-24.png)
+
+CFG scale / prompt strength
+
+> Testing those parameters where the sweet spot is really a big key for image generation
+
+## => Divide Labor
+* Split Tasks into multiple steps, chained together for complex goals
+
+> Basically the prompt that comes after.
+
+![alt text](image-25.png)
+
+> It has context from previous part of the session
+
+![alt text](image-26.png)
+
+* Image models
+> So if you see an artist that are using AI, they're not getting it right in one prompt. They're trying lots of different prompt
+
+> e.g. remove the background and then give to the model
+
+![alt text](image-27.png)
+
+* Impact onn results
+
+![alt text](image-28.png)
+
+## => Applying the Five Principles + Worksheet & Onej pagers
