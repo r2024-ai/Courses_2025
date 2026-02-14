@@ -1,8 +1,17 @@
-# What is Prompt Engineering
+# INTRODUCTION
 
-e.g. Simple prompt
+## => What is Prompt Engineering
+
+> Where do you start with prompt engineering?
+> It's impossible to keep up with AI, so don't even try.
+> You need to focus on mastering future proof principles of prompt engineering
+> Things that won't change no matter what was released this week
+> The principles in this course enable you to work professionally with generative  AI.
+
+e.g. Simple prompt  
 Write a blog post on prompt engineering
 
+Better one -  
 ```txt
 Outline a blog post on prompt engineering using the hero's journey framework in the
 following writing style:
@@ -48,10 +57,12 @@ solidarity, embracing the beauty of communication as humanity embraces a world
 rejuvenated by the marriage Of technology and ecology.
 ```
 
-* Prompts - https://brightpool.notion.site/ChatGPT-Prompt-Pack-ddaaee466a434527a58a4d6fc3027fb5
+* ChatGPT Prompt Pack - https://brightpool.notion.site/ChatGPT-Prompt-Pack-ddaaee466a434527a58a4d6fc3027fb5
 
 * Prompts - https://brightpool.notion.site/fe947b16fe894c3e8a8a19a6b81aec2c?v=9b1d189283d54b6bba80882239ecbb1a
 
 * GitHub - https://github.com/BrightPool/udemy-prompt-engineering-course
 
 * AI Resource hub - https://docs.google.com/spreadsheets/d/1xcsA3eM7DdJFjCAq37FxetE6xAUEFsLSpPK9ySqhl2g/edit?gid=0#gid=0
+
+* It will be tranferable not just text or image. you can use it for audio, video
